@@ -3,8 +3,9 @@ import ReactDOM from 'react-dom';
 import YTSearch from 'youtube-api-search'
 import SearchBar from './components/search_bar'
 import VideoList from './components/videoList'
+import apiKey from '../passwords.js'
 
-const API_KEY = "AIzaSyAukqUxUsF_z5oLOC1vIoPuhXg927dnsJo";
+const API_KEY = apiKey;
 
 // Create a new component to make some html.
 
