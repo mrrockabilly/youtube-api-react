@@ -4,6 +4,7 @@ import YTSearch from 'youtube-api-search'
 import SearchBar from './components/search_bar'
 import VideoList from './components/videoList'
 import apiKey from '../passwords.js'
+import VideoDetail from './components/videoDetail'
 
 const API_KEY = apiKey;
 
@@ -17,13 +18,14 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = { videos: [] }
-        YTSearch({ key: API_KEY, term: 'surfboards' }, data => {
+        YTSearch({ key: API_KEY, term: 'cats' }, data => {
             this.setState({videos: data})})
     }
     render() {
         return (
             <div>
                 <SearchBar />
+                <VideoDetail video={this.state.videos[0]}/>
                 <VideoList videos={this.state.videos}/>
             </div>)
     }
